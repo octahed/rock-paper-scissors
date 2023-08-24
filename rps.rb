@@ -4,5 +4,11 @@ def get_computer_choice
   CHOICES.sample
 end
 
-puts get_computer_choice
-
+#Create a method that gets a choice from the user
+def get_player_choice 
+  puts "Enter a number that corresponds with your choice"
+  CHOICES.each_index {|i| puts "#{i + 1}: #{CHOICES[i]}"}
+  print "> "
+  answer = gets.chomp.to_i
+  CHOICES[answer - 1]
+end
